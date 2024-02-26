@@ -1,0 +1,13 @@
+{
+    "displayName": "goodiesApp-Frontend",
+    "appName": "goodiesapp-frontend",
+    "description": "A simple app for frontend",
+    "lastModified": "2024-02-26T08:25:57.495Z",
+    "imgSourcePath": "",
+    "version": "1.0.0",
+    "appType": "uiOnly",
+    "templateName": "blank",
+    "createDate": "2024-02-26T08:25:56.918Z",
+    "analyticsId": "a3e4fa9c-261d-a498-fd1d-159b4a7b3bb0",
+    "createdStudioVersion": "9.2.1"
+}

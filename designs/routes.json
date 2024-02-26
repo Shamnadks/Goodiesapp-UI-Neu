@@ -1,9 +1,18 @@
 {
     "routes": [
         {
+            "path": "home",
+            "component": "applicantListComponent"
+        },
+        {
+            "path": "register",
+            "component": "registerComponent"
+        },
+        {
             "path": "''",
-            "redirectTo": "",
-            "pathMatch": "full"
+            "redirectTo": "home",
+            "pathMatch": "full",
+            "default": true
         },
         {
             "path": "**",

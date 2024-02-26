@@ -1,0 +1,56 @@
+[
+    {
+        "id": "sd_QTiQKf14Iy64Pg7d",
+        "type": "tab",
+        "createdDate": "2024-02-26T08:53:55.096Z",
+        "label": "scannerModal",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "scannerModalComponent"
+    },
+    {
+        "id": "sd_8CTFvDSKeXLvkJFH",
+        "type": "OnInit",
+        "z": "sd_QTiQKf14Iy64Pg7d",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_8CTFvDSKeXLvkJFH",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_Zv5F8bG6jrhXYf8S"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "scannerModalComponent"
+    },
+    {
+        "id": "sd_Zv5F8bG6jrhXYf8S",
+        "type": "PageVariables",
+        "z": "sd_QTiQKf14Iy64Pg7d",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_Zv5F8bG6jrhXYf8S",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "scannerModalComponent",
+        "generated": true
+    }
+]

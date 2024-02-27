@@ -1554,7 +1554,7 @@
                             },
                             {
                                 "_key": "html",
-                                "_value": "<button mat-mini-fab [color]=\"action.isPause ? 'primary' : 'warn'\" [disabled]=\"!action.isStart\" (click)=\"handle(action, action.isPause ? 'c' : 'pause')\">\r\n  <mat-icon *ngIf=\"!action.isPause\">pause</mat-icon>\r\n  \t<mat-icon *ngIf=\"action.isPause\">play_arrow</mat-icon>\r\n</button>",
+                                "_value": "<button mat-mini-fab [color]=\"action.isPause ? 'primary' : 'warn'\" [disabled]=\"!action.isStart\" (click)=\"handle(action, action.isPause ? 'play' : 'pause')\">\r\n  <mat-icon *ngIf=\"!action.isPause\">pause</mat-icon>\r\n  \t<mat-icon *ngIf=\"action.isPause\">play_arrow</mat-icon>\r\n</button>",
                                 "_type": "a",
                                 "_attrDef": "p"
                             }
@@ -2590,7 +2590,7 @@
                                         },
                                         {
                                             "_key": "html",
-                                            "_value": "<h3 style=\"font-weight:normal;margin:0 !important;\">The picture has been taken</h3>",
+                                            "_value": "<h3 style=\"font-weight:normal;margin:0 !important; font-size:15px !important;\">The picture has been taken</h3>",
                                             "_type": "a",
                                             "_attrDef": "p"
                                         }
@@ -3080,7 +3080,7 @@
                                         },
                                         {
                                             "_key": "html",
-                                            "_value": "<h3 style=\"font-weight:normal;margin:0 !important;\">A valid qr code has been scanned</h3>",
+                                            "_value": "<h3 style=\"font-weight:normal;margin:0 !important; font-size:15px !important;\">A valid qr code has been scanned</h3>",
                                             "_type": "a",
                                             "_attrDef": "p"
                                         }

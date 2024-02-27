@@ -466,7 +466,9 @@ export class scannerModalComponent {
         this.sdService.getPathAndQParamsObj('/home');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
       //appendnew_next_sd_3stYOnao4f1XEaWr
       return bh;
     } catch (e) {

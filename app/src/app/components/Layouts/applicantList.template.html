@@ -10,7 +10,7 @@
     <button mat-button style="background-color:#6E3666;color:white" (click)="downloadExcel()">Download List</button><br>
     <br>
   </div>
-  <div fxLayout="column" style="text-align:center;width:100%;height:100%;background-color:#92A8D1; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5),               -5px -5px 10px rgba(255, 255, 255, 0.5),               5px 5px 10px rgba(255, 255, 255, 0.5); ">
+  <div fxLayout="column" class="scroll" style="overflow-x:hidden;text-align:center;width:100%;height:100%;background-color:#92A8D1; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5),               -5px -5px 10px rgba(255, 255, 255, 0.5),               5px 5px 10px rgba(255, 255, 255, 0.5); ">
 
     <div fxLayout="row" fxLayoutAlign="center">
       <div fxLayout="column" fxFlex="start">
@@ -20,23 +20,17 @@
       </div>
     </div>
     <table mat-table [dataSource]="page?.tableData" [ngClass]="&apos;table table-bordered table-hover&apos;" class="table-width-fix">
-      <tr mat-header-row *matHeaderRowDef="[&apos;b796206f-4fc0-17a3-d9a3-6b530bf4d2bb&apos;,&apos;c963804a-647e-8ea9-17b1-8427e2efa1e4&apos;,&apos;44e56eb5-ae6e-76ec-e08d-11e6be48a3c8&apos;]"></tr>
-      <tr mat-row *matRowDef="let row; columns: [&apos;b796206f-4fc0-17a3-d9a3-6b530bf4d2bb&apos;,&apos;c963804a-647e-8ea9-17b1-8427e2efa1e4&apos;,&apos;44e56eb5-ae6e-76ec-e08d-11e6be48a3c8&apos;];"></tr>
-
-      <ng-container matColumnDef="b796206f-4fc0-17a3-d9a3-6b530bf4d2bb">
-        <th mat-header-cell *matHeaderCellDef>Name and Email</th>
-        <td mat-cell *matCellDef="let table; let i = index;">
-          <div style="display:block">
-            <strong>{{table.name}}</strong><br><br>
-            <strong>{{table.email}}</strong>
-          </div>
-        </td>
-      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="[&apos;c963804a-647e-8ea9-17b1-8427e2efa1e4&apos;,&apos;44e56eb5-ae6e-76ec-e08d-11e6be48a3c8&apos;]"></tr>
+      <tr mat-row *matRowDef="let row; columns: [&apos;c963804a-647e-8ea9-17b1-8427e2efa1e4&apos;,&apos;44e56eb5-ae6e-76ec-e08d-11e6be48a3c8&apos;];"></tr>
 
       <ng-container matColumnDef="c963804a-647e-8ea9-17b1-8427e2efa1e4">
-        <th mat-header-cell *matHeaderCellDef>Status</th>
+        <th mat-header-cell *matHeaderCellDef>Details</th>
         <td mat-cell *matCellDef="let table; let i = index;">
-          <div style="width:vh;height:9vh;background-color:white; color:{{table.status===&apos;false&apos;?&apos;red&apos;:&apos;#2ecc71&apos;}}">
+          <div style="display:block">
+            <strong>{{table.name}}<br></strong>
+            <strong>{{table.email}}</strong>
+          </div>
+          <div style="width:vh;height:9vh; color:{{!table.status?&apos;red&apos;:&apos;#2ecc71&apos;}}">
             <strong>{{table.status==true?&quot;Provided&quot;:&quot;Not Provided&quot;}}</strong>
           </div>
         </td>
@@ -48,7 +42,7 @@
           <div style="width:100%;height:100%;        justify-content: center; /* Horizontal centering */         align-items: center; /* Vertical centering */">
             <div>
               <!-- <img src="{{table?.profileImage}}" width="100" height="84" alt="no pic"> -->
-              <img src="{{ table?.image || &apos;https://thumbs.dreamstime.com/b/gift-box-question-mark-surprise-concept-d-rendering-white-background-82253019.jpg&apos; }}" width="100" height="84" alt="Profile Picture">
+              <img src="{{ table?.image || &apos;https://thumbs.dreamstime.com/b/gift-box-question-mark-surprise-concept-d-rendering-white-background-82253019.jpg&apos; }}" width="84" height="84" alt="Profile Picture">
             </div>
           </div>
         </td>

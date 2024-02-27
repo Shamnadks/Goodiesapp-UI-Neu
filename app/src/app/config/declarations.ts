@@ -16,6 +16,8 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-registerUser
+import { registerUser } from '../sd-services/registerUser';
 //CORE_REFERENCE_IMPORT-getApplicants
 import { getApplicants } from '../sd-services/getApplicants';
 //CORE_REFERENCE_IMPORT-scannerService
@@ -81,6 +83,8 @@ export const appProviders = [
   },
   NAuthGuardService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY
+//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-registerUser
+registerUser,
 //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-getApplicants
 getApplicants,
 //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-scannerService

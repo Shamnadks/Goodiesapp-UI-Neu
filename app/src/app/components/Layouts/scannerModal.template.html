@@ -1,1 +1,109 @@
-<div id="angularRoot"></div>
+<div style="display:flex; ">
+  <style>
+    .mat-button-toggle {
+      background-color: #ffffff;
+      color: #1100ff;
+    }
+
+    /* .mat-button-toggle:hover {
+    background-color: transparent;
+    color: #1100ff !important;    
+} */
+
+    .mat-button-toggle-checked {
+      background-color: #306cee;
+      color: #ffffff;
+
+    }
+  </style>
+  <div fxLayout="column wrap" fxFlex="100" fxLayoutGap="20px" fxLayoutAlign="center center" [fxShow]="true"><mat-toolbar fxLayoutGap="20px"><mat-icon style="width:20px;">keyboard_arrow_left</mat-icon>
+      <h3>
+        Go back to home</h3>
+    </mat-toolbar>
+    <div fxLayout="row wrap" fxLayoutGap="20px" fxLayoutAlign="space-between center" [fxShow]="true">
+      <mat-button-toggle-group [appearance]="&apos;standard&apos;" [(ngModel)]="page.camera">
+
+        <mat-button-toggle [value]="&apos;scan&apos;" (change)="toggle()"> Scan QR
+        </mat-button-toggle>
+
+        <mat-button-toggle [value]="&apos;picture&apos;" (change)="toggle()"> Take Picture
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+    <div fxLayout="row wrap" style="width:100%" fxLayoutAlign="center center" [fxShow]="true">
+      <div fxFlex="70" fxFlex.xs="90" fxFlex.md="80">
+        <ngx-scanner-qrcode #action="scanner" [config]="page.config" (event)="onEvent($event, action)"></ngx-scanner-qrcode>
+      </div>
+    </div>
+    <div fxLayout="row wrap" fxLayoutGap="20px" fxLayoutAlign="center center" [fxShow]="true">
+      <div>
+        <button mat-mini-fab [color]="action.isPause ? &apos;primary&apos; : &apos;warn&apos;" [disabled]="!action.isStart" (click)="handle(action, action.isPause ? &apos;c&apos; : &apos;pause&apos;)">
+          <mat-icon *ngIf="!action.isPause">pause</mat-icon>
+          <mat-icon *ngIf="action.isPause">play_arrow</mat-icon>
+        </button>
+      </div>
+      <div>
+
+        <button mat-mini-fab [color]="action.isTorch ? &apos;info&apos; : &apos;warn&apos;" [disabled]="!action.isStart" (click)="action.isTorch = !action.isTorch; handle(action, &apos;torcher&apos;)">
+          <mat-icon *ngIf="!action.isTorch">flash_on</mat-icon>
+          <mat-icon *ngIf="action.isTorch">flash_off</mat-icon>
+        </button>
+      </div>
+      <div>
+        <button mat-mini-fab [color]="&apos;info&apos;" [disabled]="!action.isStart||page.camera==&apos;scan&apos;" (click)="handle(action, &apos;download&apos;)">
+          <mat-icon>camera_alt</mat-icon>
+        </button>
+      </div>
+    </div><mat-card>
+      <mat-card-content>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" style="width:100%;" fxLayoutGap="10px" fxLayoutAlign="start center" [fxShow]="true">
+            <div>
+              <mat-icon *ngIf="page.file">done</mat-icon>
+              <mat-icon *ngIf="!page.file" color="warn">clear</mat-icon>
+            </div>
+            <div>
+              <h3 style="font-weight:normal;margin:0 !important;">The picture has been taken</h3>
+            </div>
+          </div>
+          <div fxLayout="row wrap" style="width:100%;" fxLayoutGap="10px" fxLayoutAlign="center center" [fxShow]="true">
+            <div>
+              <mat-icon *ngIf="page.id">done</mat-icon>
+              <mat-icon *ngIf="!page.id" color="warn">clear</mat-icon>
+            </div>
+            <div>
+              <h3 style="font-weight:normal;margin:0 !important;">A valid qr code has been scanned</h3>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <div fxLayout="column wrap" style="margin-top:10px;" fxLayoutGap="10px" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.user">
+      <div fxLayout="row wrap" fxLayoutGap="20px" fxLayoutAlign="start center" [fxShow]="true">
+        <mat-chip-list [selectable]="true" [multiple]="true">
+
+          <mat-chip style="background-color: blue; color:white;" color="primary">
+            Name
+          </mat-chip>
+        </mat-chip-list>
+        <div>
+          {{page.user?.name}}
+        </div>
+      </div>
+      <div fxLayout="row wrap" fxLayoutGap="20px" fxLayoutAlign="center center" [fxShow]="true">
+        <mat-chip-list [selectable]="true" [multiple]="true">
+
+          <mat-chip style="background-color: blue; color:white;" color="primary">
+            Email
+          </mat-chip>
+        </mat-chip-list>
+        <div>
+          {{page.user?.email}}
+        </div>
+      </div>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true" *ngIf="page.file&amp;&amp;page.id"><button mat-raised-button color="primary" (click)="submit()">Submit here</button></div>
+    <div *ngIf="page.user&amp;&amp;!page.id" style="text-align:center;">
+      This user has already received goodies</div>
+  </div>
+</div>

@@ -5,6 +5,7 @@
 
 import { Component, Injector, ViewChild } from '@angular/core'; //_splitter_
 import { MatSnackBar } from '@angular/material/snack-bar'; //_splitter_
+import { Router } from '@angular/router'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
@@ -143,6 +144,21 @@ export class scannerModalComponent {
       //appendnew_next_toggle
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_srHJemkFURbdu785');
+    }
+  }
+
+  navigateHome(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_3stYOnao4f1XEaWr(bh);
+      //appendnew_next_navigateHome
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_7AEJj2XG4VkvsY2a');
     }
   }
   //appendnew_flow_scannerModalComponent_start
@@ -441,6 +457,20 @@ export class scannerModalComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_NwFHF3yniqMFaCUa');
+    }
+  }
+
+  async sd_3stYOnao4f1XEaWr(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/home');
+      await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+      //appendnew_next_sd_3stYOnao4f1XEaWr
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_3stYOnao4f1XEaWr');
     }
   }
 

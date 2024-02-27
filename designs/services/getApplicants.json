@@ -1,0 +1,139 @@
+[
+    {
+        "id": "sd_IQSPuXuoYNiGfMAP",
+        "type": "tab",
+        "createdDate": "2024-02-27T05:49:58.308Z",
+        "label": "getApplicants",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "tabType": "client",
+        "generateNext": true,
+        "serviceName": "getApplicants",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_PUKDCtNoH0qHHyks",
+        "type": "Start",
+        "z": "sd_IQSPuXuoYNiGfMAP",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "getApplicants",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [
+            {
+                "key": "response",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "getApplicants",
+        "category": "General",
+        "x": 160,
+        "y": 120,
+        "wires": [
+            [
+                "sd_NA3kcb5MSOU0xKuE"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "getApplicants"
+    },
+    {
+        "id": "sd_NA3kcb5MSOU0xKuE",
+        "type": "Script",
+        "z": "sd_IQSPuXuoYNiGfMAP",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "// bh.local.httpUrl=bh.system?.environment?.properties.ssdUrl+'users'\nbh.local.httpUrl=\"http://localhost:8081/api/users\"\n\nconsole.log(bh.local.httpUrl)",
+        "functionName": "sd_NA3kcb5MSOU0xKuE",
+        "category": "Function",
+        "x": 285,
+        "y": 120,
+        "wires": [
+            [
+                "sd_rr5OaYnsV7ZxdWxn"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getApplicants",
+        "generated": true
+    },
+    {
+        "id": "sd_rr5OaYnsV7ZxdWxn",
+        "type": "HttpRequest",
+        "z": "sd_IQSPuXuoYNiGfMAP",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlMapping": "bh.local.httpUrl",
+        "urlMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "httpUrl"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.response",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "response"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_rr5OaYnsV7ZxdWxn",
+        "category": "HTTP",
+        "x": 420,
+        "y": 120,
+        "wires": [
+            [
+                "sd_41vsMoXaGFRaUmnq"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getApplicants",
+        "generated": true
+    },
+    {
+        "id": "sd_41vsMoXaGFRaUmnq",
+        "type": "Script",
+        "z": "sd_IQSPuXuoYNiGfMAP",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.local.response)",
+        "functionName": "sd_41vsMoXaGFRaUmnq",
+        "category": "Function",
+        "x": 545,
+        "y": 120,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "getApplicants",
+        "generated": true
+    }
+]

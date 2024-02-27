@@ -1,1 +1,20 @@
-<div id="angularRoot"></div>
+<div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+  <form fxFlex="100" [formGroup]="page.form" (ngSubmit)="submitForm()">
+    <div fxLayout="column wrap" style="padding: 100px" fxFlex="100" fxLayoutAlign="center center" [fxShow]="true">
+      <h3>
+        Register Uesr</h3>
+      <mat-form-field style="width : 50%;min-width: 250px;" [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+        <input matInput placeholder="Enter the user name" [required]="false" formControlName="name">
+        <mat-error align="start" *ngIf="page.form.get(&apos;name&apos;)?.errors?.required">Please enter the name</mat-error>
+      </mat-form-field>
+      <mat-form-field style="width : 50%;min-width: 250px;" [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+        <input matInput placeholder="Enter the email address" [required]="false" formControlName="email">
+        <mat-error align="start" *ngIf="page.form.get(&apos;email&apos;)?.errors?.required">Please enter the email</mat-error><mat-error align="start" *ngIf="page.form.get(&apos;email&apos;)?.errors?.email">Please enter valid email address</mat-error>
+      </mat-form-field>
+      <mat-form-field style="width : 50%;min-width: 250px;" [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+        <input matInput type="number" placeholder="Enter the phone number" [required]="false" formControlName="phone">
+        <mat-error align="start" *ngIf="page.form.get(&apos;phone&apos;)?.errors?.required">Please enter the phone number</mat-error><mat-error align="start" *ngIf="page.form.get(&apos;phone&apos;)?.errors?.pattern">enter the valid phone number</mat-error>
+      </mat-form-field><button mat-button style="width : 50%; min-width: 250px; background-color:blue; color:white;" type="add user">Button</button>
+    </div>
+  </form>
+</div>

@@ -4,9 +4,17 @@
 //append_imports_start
 
 import { Component, Injector } from '@angular/core'; //_splitter_
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms'; //_splitter_
+import { MatSnackBar } from '@angular/material/snack-bar'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
+import { registerUser } from 'app/sd-services/registerUser'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -25,6 +33,7 @@ export class registerComponent {
   ) {
     this.__page_injector__.get(SDPageCommonService).addPageDefaults(this.page);
     this.registerListeners();
+    this.page.dep.FormBuilder = this.__page_injector__.get(FormBuilder); //FormBuilder
     //appendnew_element_inject
   }
 
@@ -55,14 +64,129 @@ export class registerComponent {
     }
   }
 
+  submitForm(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.submitFormScript(bh);
+      //appendnew_next_submitForm
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_fQkl5z0H7jLCka3q');
+    }
+  }
   //appendnew_flow_registerComponent_start
 
   sd_Mie1i3Ftpvs9CGrs(bh) {
     try {
+      this.page.form = undefined;
+      this.page.formGroup = undefined;
+      this.page.formControl = undefined;
+      this.page.validators = undefined;
+      bh = this.sd_zlxIaAUzWmrAAumv(bh);
       //appendnew_next_sd_Mie1i3Ftpvs9CGrs
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_Mie1i3Ftpvs9CGrs');
+    }
+  }
+
+  sd_zlxIaAUzWmrAAumv(bh) {
+    try {
+      this.page.formGroup = FormGroup;
+      this.page.formControl = FormControl;
+      this.page.validators = Validators;
+      bh = this.sd_TQ6Fo4smMMXCLetH(bh);
+      //appendnew_next_sd_zlxIaAUzWmrAAumv
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_zlxIaAUzWmrAAumv');
+    }
+  }
+
+  sd_TQ6Fo4smMMXCLetH(bh) {
+    try {
+      const page = this.page;
+      page.form = new page.formGroup({
+        name: new page.formControl('', [page.validators.required]),
+        email: new page.formControl('', [
+          page.validators.required,
+          page.validators.email,
+        ]),
+        phone: new page.formControl('', [
+          page.validators.required,
+          page.validators.pattern('^((\\+91-?)|0)?[0-9]{10}$'),
+        ]),
+      });
+      //appendnew_next_sd_TQ6Fo4smMMXCLetH
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_TQ6Fo4smMMXCLetH');
+    }
+  }
+
+  submitFormScript(bh) {
+    try {
+      const page = this.page;
+      if (!page.form.valid) {
+        return;
+      }
+      bh.local.userData = {
+        ...page.form.value,
+      };
+      bh = this.submitFormCallService(bh);
+      //appendnew_next_submitFormScript
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_skLuZTzTUAfqOaX7');
+    }
+  }
+
+  async submitFormCallService(bh) {
+    try {
+      const registerUserInstance: registerUser =
+        this.__page_injector__.get(registerUser);
+
+      let outputVariables = await registerUserInstance.sd_aB6sQo8JpjBUqaLz(
+        bh.local.userData
+      );
+      bh.local.result = outputVariables.local.result;
+
+      //appendnew_next_submitFormCallService
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_bK2h98j4wk0zoMiX');
+    }
+  }
+
+  sd_QaJCSlsMu0eEoWGE(bh) {
+    try {
+      const page = this.page;
+      bh.local.response = bh.error.message || 'something went wrong';
+      console.log(bh.error);
+      bh = this.sd_306i92GFG68UKLGb(bh);
+      //appendnew_next_sd_QaJCSlsMu0eEoWGE
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_QaJCSlsMu0eEoWGE');
+    }
+  }
+
+  sd_306i92GFG68UKLGb(bh) {
+    try {
+      this.__page_injector__.get(MatSnackBar).open(bh.local.response, '', {
+        duration: 3000,
+        direction: 'ltr',
+        horizontalPosition: 'start',
+        verticalPosition: 'bottom',
+      });
+      //appendnew_next_sd_306i92GFG68UKLGb
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_306i92GFG68UKLGb');
     }
   }
 
@@ -80,7 +204,28 @@ export class registerComponent {
     console.error(e);
     bh.error = e;
     bh.errorSource = src;
-    throw e;
+    if (
+      false ||
+      this.sd_PGsIIoVdHvWDDTxP(bh)
+      /*appendnew_next_Catch*/
+    ) {
+      return bh;
+    } else {
+      throw e;
+    }
+  }
+  sd_PGsIIoVdHvWDDTxP(bh) {
+    const nodes = [
+      'sd_fQkl5z0H7jLCka3q',
+      'sd_skLuZTzTUAfqOaX7',
+      'sd_bK2h98j4wk0zoMiX',
+    ];
+    if (nodes.includes(bh.errorSource)) {
+      bh = this.sd_QaJCSlsMu0eEoWGE(bh);
+      //appendnew_next_sd_PGsIIoVdHvWDDTxP
+      return true;
+    }
+    return false;
   }
   //appendnew_flow_registerComponent_Catch
 }

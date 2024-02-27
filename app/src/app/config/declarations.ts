@@ -18,6 +18,8 @@ window['neutrinos'] = {
 //CORE_REFERENCE_IMPORTS
 //CORE_REFERENCE_IMPORT-getApplicants
 import { getApplicants } from '../sd-services/getApplicants';
+//CORE_REFERENCE_IMPORT-scannerService
+import { scannerService } from '../sd-services/scannerService';
 //CORE_REFERENCE_IMPORT-scannerModalComponent
 import { scannerModalComponent } from '../components/Layouts/scannerModal.component';
 //CORE_REFERENCE_IMPORT-applicantListComponent
@@ -81,6 +83,8 @@ export const appProviders = [
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY
 //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-getApplicants
 getApplicants,
+//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-scannerService
+scannerService,
 ];
 
 /**
@@ -91,6 +95,7 @@ getApplicants,
 export const appRoutes = [
   { path: 'home', component: applicantListComponent },
   { path: 'register', component: registerComponent },
+  { path: 'scanner', component: scannerModalComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

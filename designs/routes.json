@@ -9,6 +9,10 @@
             "component": "registerComponent"
         },
         {
+            "path": "scanner",
+            "component": "scannerModalComponent"
+        },
+        {
             "path": "''",
             "redirectTo": "home",
             "pathMatch": "full",

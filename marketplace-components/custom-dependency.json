@@ -1,0 +1,17 @@
+{
+    "packages": [
+        {
+            "type": "angular-package",
+            "name": "ngx-scanner-qrcode",
+            "version": "1.6.6",
+            "nModule": {
+                "importStatement": "import {NgxScannerQrcodeModule} from 'ngx-scanner-qrcode'",
+                "imports": [
+                    "NgxScannerQrcodeModule"
+                ],
+                "name": "ngx-scanner-qrcode",
+                "version": "1.6.6"
+            }
+        }
+    ]
+}

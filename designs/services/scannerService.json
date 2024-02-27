@@ -1,0 +1,204 @@
+[
+    {
+        "id": "sd_WGiiJbDpRs20urpL",
+        "type": "tab",
+        "createdDate": "2024-02-27T03:53:05.214Z",
+        "label": "scannerService",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "tabType": "client",
+        "generateNext": true,
+        "serviceName": "scannerService",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_dLZfhFZ0rDgUlEDu",
+        "type": "Start",
+        "z": "sd_WGiiJbDpRs20urpL",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "getUser",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "accept_bh": true,
+        "functionName": "getUser",
+        "category": "General",
+        "x": 80,
+        "y": 80,
+        "wires": [
+            [
+                "sd_6QCEKXKsqyvXMmVj"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "scannerService"
+    },
+    {
+        "id": "sd_hzo02in3T1RXueb2",
+        "type": "Start",
+        "z": "sd_WGiiJbDpRs20urpL",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "updateUser",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "accept_bh": true,
+        "functionName": "updateUser",
+        "category": "General",
+        "x": 80,
+        "y": 200,
+        "wires": [
+            [
+                "sd_Inn3RnLSDUte9q6a"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "scannerService"
+    },
+    {
+        "id": "sd_6QCEKXKsqyvXMmVj",
+        "type": "Script",
+        "z": "sd_WGiiJbDpRs20urpL",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.input.url=bh.system.environment.properties.ssdURL+\"user/get\"",
+        "functionName": "sd_6QCEKXKsqyvXMmVj",
+        "category": "Function",
+        "x": 280,
+        "y": 80,
+        "wires": [
+            [
+                "sd_WPM2veEsOICUPpvI"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "scannerService",
+        "generated": true
+    },
+    {
+        "id": "sd_Inn3RnLSDUte9q6a",
+        "type": "Script",
+        "z": "sd_WGiiJbDpRs20urpL",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.input.url=bh.system.environment.properties.ssdURL+\"user/put\"\nconsole.log(bh.local.body)",
+        "functionName": "sd_Inn3RnLSDUte9q6a",
+        "category": "Function",
+        "x": 280,
+        "y": 200,
+        "wires": [
+            [
+                "sd_WzUm5IVMLPgvsQJ8"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "scannerService",
+        "generated": true
+    },
+    {
+        "id": "sd_WPM2veEsOICUPpvI",
+        "type": "HttpRequest",
+        "z": "sd_WGiiJbDpRs20urpL",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlMapping": "bh.input.url",
+        "urlMappingObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.input.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "paramMapping": "bh.local.query",
+        "paramMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "query"
+        },
+        "functionName": "sd_WPM2veEsOICUPpvI",
+        "category": "HTTP",
+        "x": 425,
+        "y": 80,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "scannerService",
+        "generated": true
+    },
+    {
+        "id": "sd_WzUm5IVMLPgvsQJ8",
+        "type": "HttpRequest",
+        "z": "sd_WGiiJbDpRs20urpL",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "put",
+        "methodMappingObj": {},
+        "urlMapping": "bh.input.url",
+        "urlMappingObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.local.body",
+        "reqBodyObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "body"
+        },
+        "resultMapping": "bh.input.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_WzUm5IVMLPgvsQJ8",
+        "category": "HTTP",
+        "x": 440,
+        "y": 200,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "scannerService",
+        "generated": true
+    }
+]

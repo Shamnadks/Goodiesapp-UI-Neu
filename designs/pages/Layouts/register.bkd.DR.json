@@ -980,7 +980,6 @@
                 "fac8deb8-3739-5868-4e49-cbb21ddd02b8": {
                     "paletteKey": "NG-button",
                     "parentEditorKey": "7340793c-43a1-ade7-36ba-2c886a89e2a3",
-                    "isCommented": "false",
                     "commentid": null,
                     "designerReference": [
                         {
@@ -997,7 +996,7 @@
                         },
                         {
                             "_key": "buttonname",
-                            "_value": "Button",
+                            "_value": "Register",
                             "_type": "a",
                             "_attrDef": "p",
                             "_useAsLabel": true

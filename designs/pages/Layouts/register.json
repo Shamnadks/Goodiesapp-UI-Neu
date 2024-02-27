@@ -337,7 +337,9 @@
             "value": "3000"
         },
         "horizontalPosition": "start",
+        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
+        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""

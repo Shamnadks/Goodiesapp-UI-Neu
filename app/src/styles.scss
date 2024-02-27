@@ -8,3 +8,9 @@
     width: 100%;
   
 }
+
+@media screen and (max-width: 280px) {
+  .scroll {
+    overflow-x: auto;
+  }
+}

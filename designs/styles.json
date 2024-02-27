@@ -1,5 +1,6 @@
 {
     "classes": [
-        "tableview"
+        "tableview",
+        "scroll"
     ]
 }

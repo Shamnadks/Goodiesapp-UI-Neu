@@ -375,7 +375,9 @@ export class applicantListComponent implements AfterViewInit {
         this.sdService.getPathAndQParamsObj('/scanner');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
       //appendnew_next_sd_aq7jRv69dpLGBhUx
       return bh;
     } catch (e) {

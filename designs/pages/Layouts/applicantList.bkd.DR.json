@@ -1040,13 +1040,15 @@
                 },
                 {
                     "_key": "style",
-                    "_value": "text-align:center;width:100%;height:100%;background-color:#92A8D1; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5),               -5px -5px 10px rgba(255, 255, 255, 0.5),               5px 5px 10px rgba(255, 255, 255, 0.5); ",
+                    "_value": "overflow-x:hidden;text-align:center;width:100%;height:100%;background-color:#92A8D1; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5),               -5px -5px 10px rgba(255, 255, 255, 0.5),               5px 5px 10px rgba(255, 255, 255, 0.5); ",
                     "_type": "kv",
                     "_attrDef": "p"
                 },
                 {
                     "_key": "class",
-                    "_value": "",
+                    "_value": [
+                        "scroll"
+                    ],
                     "_type": "dav",
                     "_attrDef": "p"
                 },
@@ -1091,7 +1093,7 @@
                     "_attrDef": "c"
                 }
             ],
-            "c32aefc5-9f96-635f-9678-c3c10415ad9b": {
+            "7051f285-f5ac-0661-e54d-5421bc360968": {
                 "paletteKey": "ng-droppable-table-column",
                 "parentEditorKey": "a0bda826-0578-87ec-1d94-d7799570d547",
                 "isAdvancedChildComponent": true,
@@ -1111,13 +1113,13 @@
                     },
                     {
                         "_key": "columnId",
-                        "_value": "b796206f-4fc0-17a3-d9a3-6b530bf4d2bb",
+                        "_value": "c963804a-647e-8ea9-17b1-8427e2efa1e4",
                         "_type": "dav",
                         "_attrDef": "p"
                     },
                     {
                         "_key": "Header Label",
-                        "_value": "Name and Email",
+                        "_value": "Details",
                         "_type": "a",
                         "_attrDef": "p"
                     },
@@ -1134,10 +1136,11 @@
                         "_attrDef": "p"
                     }
                 ],
-                "01e38cc1-64ee-9716-787c-0770c6bdf378": {
+                "66769dac-e434-6683-27e6-71cd1af738ad": {
                     "paletteKey": "Html5",
-                    "parentEditorKey": "c32aefc5-9f96-635f-9678-c3c10415ad9b",
+                    "parentEditorKey": "7051f285-f5ac-0661-e54d-5421bc360968",
                     "isAdvancedComponent": true,
+                    "isCommented": "false",
                     "commentid": null,
                     "designerReference": [
                         {
@@ -1321,10 +1324,11 @@
                             "_visibility": false
                         }
                     ],
-                    "404d7fb3-8e96-6e1a-3445-51bf0ab9f1e9": {
+                    "cacf6a5c-ed22-e956-aae7-90f395926e5e": {
                         "paletteKey": "html-editor",
-                        "parentEditorKey": "01e38cc1-64ee-9716-787c-0770c6bdf378",
+                        "parentEditorKey": "66769dac-e434-6683-27e6-71cd1af738ad",
                         "isAdvancedChildComponent": true,
+                        "isCommented": "false",
                         "commentid": null,
                         "designerReference": [
                             {
@@ -1341,151 +1345,13 @@
                             },
                             {
                                 "_key": "html",
-                                "_value": "<strong>{{table.name}}</strong><br><br>\r\n<strong>{{table.email}}</strong>",
+                                "_value": "<strong>{{table.name}}<br></strong>\r\n<strong>{{table.email}}</strong>",
                                 "_type": "a",
                                 "_attrDef": "p"
                             }
                         ]
                     }
-                }
-            },
-            "5844c562-b96a-8bd6-5b1c-fd39f86a6eed": {
-                "paletteKey": "ng-table-column",
-                "parentEditorKey": "a0bda826-0578-87ec-1d94-d7799570d547",
-                "isAdvancedChildComponent": true,
-                "isCommented": "true",
-                "commentid": "1708980675321",
-                "designerReference": [
-                    {
-                        "_key": "Header Label",
-                        "_value": "Name",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "matSortHeaderColumn",
-                        "_value": "",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "Mapping",
-                        "_value": "{{table.name}}",
-                        "_type": "ma",
-                        "_attrDef": "p",
-                        "_useAsLabel": true
-                    },
-                    {
-                        "_key": "columnName",
-                        "_value": "",
-                        "_type": "dav",
-                        "_attrDef": "p",
-                        "_visibility": false
-                    },
-                    {
-                        "_key": "headerclass",
-                        "_value": "",
-                        "_type": "dav",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "columnclass",
-                        "_value": "",
-                        "_type": "dav",
-                        "_attrDef": "p"
-                    }
-                ]
-            },
-            "abf65495-48dd-9ac1-6962-5913a0cf928a": {
-                "paletteKey": "ng-table-column",
-                "parentEditorKey": "a0bda826-0578-87ec-1d94-d7799570d547",
-                "isAdvancedChildComponent": true,
-                "isCommented": "true",
-                "commentid": "1708980597817",
-                "designerReference": [
-                    {
-                        "_key": "Header Label",
-                        "_value": "Email",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "matSortHeaderColumn",
-                        "_value": "",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "Mapping",
-                        "_value": "{{table.email}}",
-                        "_type": "ma",
-                        "_attrDef": "p",
-                        "_useAsLabel": true
-                    },
-                    {
-                        "_key": "columnName",
-                        "_value": "",
-                        "_type": "dav",
-                        "_attrDef": "p",
-                        "_visibility": false
-                    },
-                    {
-                        "_key": "headerclass",
-                        "_value": "",
-                        "_type": "dav",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "columnclass",
-                        "_value": "",
-                        "_type": "dav",
-                        "_attrDef": "p"
-                    }
-                ]
-            },
-            "7051f285-f5ac-0661-e54d-5421bc360968": {
-                "paletteKey": "ng-droppable-table-column",
-                "parentEditorKey": "a0bda826-0578-87ec-1d94-d7799570d547",
-                "isAdvancedChildComponent": true,
-                "commentid": null,
-                "designerReference": [
-                    {
-                        "_key": "Sort Key",
-                        "_value": "",
-                        "_type": "dav",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "matSortHeaderColumn",
-                        "_value": "",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "columnId",
-                        "_value": "c963804a-647e-8ea9-17b1-8427e2efa1e4",
-                        "_type": "dav",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "Header Label",
-                        "_value": "Status",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "headerclass",
-                        "_value": "",
-                        "_type": "dav",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "columnclass",
-                        "_value": "",
-                        "_type": "dav",
-                        "_attrDef": "p"
-                    }
-                ],
+                },
                 "fa9651a8-03e0-4976-796e-06692b7e2d4a": {
                     "paletteKey": "Html5",
                     "parentEditorKey": "7051f285-f5ac-0661-e54d-5421bc360968",
@@ -1494,7 +1360,7 @@
                     "designerReference": [
                         {
                             "_key": "style",
-                            "_value": "width:vh;height:9vh;background-color:white; color:{{table.status==='false'?'red':'#2ecc71'}}",
+                            "_value": "width:vh;height:9vh; color:{{!table.status?'red':'#2ecc71'}}",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -2138,7 +2004,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "<!-- <img src=\"{{table?.profileImage}}\" width=\"100\" height=\"84\" alt=\"no pic\"> -->\r\n<img src=\"{{ table?.image || 'https://thumbs.dreamstime.com/b/gift-box-question-mark-surprise-concept-d-rendering-white-background-82253019.jpg' }}\" width=\"100\" height=\"84\" alt=\"Profile Picture\">",
+                                    "_value": "<!-- <img src=\"{{table?.profileImage}}\" width=\"100\" height=\"84\" alt=\"no pic\"> -->\r\n<img src=\"{{ table?.image || 'https://thumbs.dreamstime.com/b/gift-box-question-mark-surprise-concept-d-rendering-white-background-82253019.jpg' }}\" width=\"84\" height=\"84\" alt=\"Profile Picture\">",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }

@@ -37,7 +37,7 @@
     </div>
     <div fxLayout="row wrap" fxLayoutGap="20px" fxLayoutAlign="center center" [fxShow]="true">
       <div>
-        <button mat-mini-fab [color]="action.isPause ? &apos;primary&apos; : &apos;warn&apos;" [disabled]="!action.isStart" (click)="handle(action, action.isPause ? &apos;c&apos; : &apos;pause&apos;)">
+        <button mat-mini-fab [color]="action.isPause ? &apos;primary&apos; : &apos;warn&apos;" [disabled]="!action.isStart" (click)="handle(action, action.isPause ? &apos;play&apos; : &apos;pause&apos;)">
           <mat-icon *ngIf="!action.isPause">pause</mat-icon>
           <mat-icon *ngIf="action.isPause">play_arrow</mat-icon>
         </button>
@@ -63,7 +63,7 @@
               <mat-icon *ngIf="!page.file" color="warn">clear</mat-icon>
             </div>
             <div>
-              <h3 style="font-weight:normal;margin:0 !important;">The picture has been taken</h3>
+              <h3 style="font-weight:normal;margin:0 !important; font-size:15px !important;">The picture has been taken</h3>
             </div>
           </div>
           <div fxLayout="row wrap" style="width:100%;" fxLayoutGap="10px" fxLayoutAlign="center center" [fxShow]="true">
@@ -72,7 +72,7 @@
               <mat-icon *ngIf="!page.id" color="warn">clear</mat-icon>
             </div>
             <div>
-              <h3 style="font-weight:normal;margin:0 !important;">A valid qr code has been scanned</h3>
+              <h3 style="font-weight:normal;margin:0 !important; font-size:15px !important;">A valid qr code has been scanned</h3>
             </div>
           </div>
         </div>

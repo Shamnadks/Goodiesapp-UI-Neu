@@ -68,7 +68,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "scannerModalComponent"
+        "serviceName": "scannerModalComponent",
+        "generated": false
     },
     {
         "id": "sd_Zv5F8bG6jrhXYf8S",
@@ -134,7 +135,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "scannerModalComponent"
+        "serviceName": "scannerModalComponent",
+        "generated": false
     },
     {
         "id": "sd_HPc6tgqNsYX3zg1M",
@@ -197,7 +199,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "scannerModalComponent"
+        "serviceName": "scannerModalComponent",
+        "generated": false
     },
     {
         "id": "sd_Uvw2dlCcz6FxBJLU",
@@ -250,7 +253,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "scannerModalComponent"
+        "serviceName": "scannerModalComponent",
+        "generated": false
     },
     {
         "id": "sd_iyEtlqBjMMbwjLrt",
@@ -316,7 +320,6 @@
             "bh.input.action",
             "bh.local.fn"
         ],
-        "accept_bh": false,
         "accept_csd": false,
         "functionName": "sd_ncUWDh9XxQXppBTe",
         "category": "General",
@@ -328,9 +331,9 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
+        "generated": true,
         "generateNext": false,
-        "serviceName": "scannerModalComponent",
-        "generated": true
+        "serviceName": "scannerModalComponent"
     },
     {
         "id": "sd_3VYzkD80ik9o4YxI",
@@ -567,7 +570,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "scannerModalComponent"
+        "serviceName": "scannerModalComponent",
+        "generated": false
     },
     {
         "id": "sd_QoBQniQpm4NiyxYp",
@@ -682,7 +686,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "scannerModalComponent"
+        "serviceName": "scannerModalComponent",
+        "generated": false
     },
     {
         "id": "sd_NwFHF3yniqMFaCUa",
@@ -759,9 +764,7 @@
             "value": "2000"
         },
         "horizontalPosition": "center",
-        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
-        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -787,6 +790,13 @@
         "nodeType": "flow",
         "name": "",
         "path": "/home",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
         "functionName": "sd_3stYOnao4f1XEaWr",
         "category": "Navigation",
         "x": 405,
@@ -821,6 +831,7 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "scannerModalComponent"
+        "serviceName": "scannerModalComponent",
+        "generated": false
     }
 ]

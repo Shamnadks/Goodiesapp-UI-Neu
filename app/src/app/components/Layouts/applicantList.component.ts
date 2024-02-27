@@ -7,6 +7,7 @@ import { AfterViewInit, Component, Injector, ViewChild } from '@angular/core'; /
 import { MatPaginator } from '@angular/material/paginator'; //_splitter_
 import { MatSort } from '@angular/material/sort'; //_splitter_
 import { MatTableDataSource } from '@angular/material/table'; //_splitter_
+import { Router } from '@angular/router'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
@@ -118,6 +119,21 @@ export class applicantListComponent implements AfterViewInit {
       //appendnew_next_downloadExcel
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_dKzhUzc2dGDKY77X');
+    }
+  }
+
+  navigateScanner(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_aq7jRv69dpLGBhUx(bh);
+      //appendnew_next_navigateScanner
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_zcSjfUae2fPCy8YF');
     }
   }
   //appendnew_flow_applicantListComponent_start
@@ -350,6 +366,20 @@ export class applicantListComponent implements AfterViewInit {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_hUqfflfiNmLQFesx');
+    }
+  }
+
+  async sd_aq7jRv69dpLGBhUx(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/scanner');
+      await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+      //appendnew_next_sd_aq7jRv69dpLGBhUx
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_aq7jRv69dpLGBhUx');
     }
   }
 

@@ -316,6 +316,7 @@
             "bh.input.action",
             "bh.local.fn"
         ],
+        "accept_bh": false,
         "accept_csd": false,
         "functionName": "sd_ncUWDh9XxQXppBTe",
         "category": "General",
@@ -758,7 +759,9 @@
             "value": "2000"
         },
         "horizontalPosition": "center",
+        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
+        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -775,5 +778,49 @@
         "generateNext": false,
         "serviceName": "scannerModalComponent",
         "generated": true
+    },
+    {
+        "id": "sd_3stYOnao4f1XEaWr",
+        "type": "Navigation",
+        "z": "sd_QTiQKf14Iy64Pg7d",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/home",
+        "functionName": "sd_3stYOnao4f1XEaWr",
+        "category": "Navigation",
+        "x": 405,
+        "y": 600,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "scannerModalComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_7AEJj2XG4VkvsY2a",
+        "type": "PageStart",
+        "z": "sd_QTiQKf14Iy64Pg7d",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "navigateHome",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "navigateHome",
+        "category": "General",
+        "x": 140,
+        "y": 600,
+        "wires": [
+            [
+                "sd_3stYOnao4f1XEaWr"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "scannerModalComponent"
     }
 ]

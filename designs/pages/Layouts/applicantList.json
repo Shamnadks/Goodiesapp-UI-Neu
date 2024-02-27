@@ -568,5 +568,49 @@
         "generateNext": false,
         "serviceName": "applicantListComponent",
         "generated": true
+    },
+    {
+        "id": "sd_zcSjfUae2fPCy8YF",
+        "type": "PageStart",
+        "z": "sd_pHWyEy6BSRwtcqXi",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "navigateScanner",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "navigateScanner",
+        "category": "General",
+        "x": 600,
+        "y": 320,
+        "wires": [
+            [
+                "sd_aq7jRv69dpLGBhUx"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "applicantListComponent"
+    },
+    {
+        "id": "sd_aq7jRv69dpLGBhUx",
+        "type": "Navigation",
+        "z": "sd_pHWyEy6BSRwtcqXi",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/scanner",
+        "functionName": "sd_aq7jRv69dpLGBhUx",
+        "category": "Navigation",
+        "x": 720,
+        "y": 320,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "applicantListComponent",
+        "generated": true
     }
 ]

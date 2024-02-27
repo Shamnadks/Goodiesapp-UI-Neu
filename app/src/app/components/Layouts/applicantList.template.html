@@ -1,4 +1,8 @@
 <div [ngClass]="&apos;container table-responsive py-2&apos;" class="tableview">
+  <div>
+    <button mat-button style="background-color:#6E3666;color:white" (click)="navigateScanner()">Scanner page</button><br>
+    <br>
+  </div>
   <h1 style="text-align: center;font-size:bold;">
     <strong style="color:#48575c">Applicants List</strong><br>
   </h1>
@@ -32,8 +36,8 @@
       <ng-container matColumnDef="c963804a-647e-8ea9-17b1-8427e2efa1e4">
         <th mat-header-cell *matHeaderCellDef>Status</th>
         <td mat-cell *matCellDef="let table; let i = index;">
-          <div style="width:vh;height:9vh;background-color:white; color:{{table.status===&apos;provided&apos;?&apos;#2ecc71&apos;:&apos;#e74c3c &apos;}}">
-            <strong>{{table.status}}</strong>
+          <div style="width:vh;height:9vh;background-color:white; color:{{table.status===&apos;false&apos;?&apos;red&apos;:&apos;#2ecc71&apos;}}">
+            <strong>{{table.status==true?&quot;Provided&quot;:&quot;Not Provided&quot;}}</strong>
           </div>
         </td>
       </ng-container>

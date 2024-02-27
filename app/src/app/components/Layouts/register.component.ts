@@ -131,12 +131,14 @@ export class registerComponent {
   submitFormScript(bh) {
     try {
       const page = this.page;
+      console.log(page.form);
       if (!page.form.valid) {
         return;
       }
       bh.local.userData = {
         ...page.form.value,
       };
+      page.form.reset();
       bh = this.submitFormCallService(bh);
       //appendnew_next_submitFormScript
       return bh;
@@ -155,10 +157,28 @@ export class registerComponent {
       );
       bh.local.result = outputVariables.local.result;
 
+      bh = this.sd_OJZ46XXwr2yeE15t(bh);
       //appendnew_next_submitFormCallService
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_bK2h98j4wk0zoMiX');
+    }
+  }
+
+  sd_OJZ46XXwr2yeE15t(bh) {
+    try {
+      this.__page_injector__
+        .get(MatSnackBar)
+        .open('User Added successfully', '', {
+          duration: 3000,
+          direction: 'ltr',
+          horizontalPosition: 'center',
+          verticalPosition: 'bottom',
+        });
+      //appendnew_next_sd_OJZ46XXwr2yeE15t
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_OJZ46XXwr2yeE15t');
     }
   }
 
@@ -167,26 +187,10 @@ export class registerComponent {
       const page = this.page;
       bh.local.response = bh.error.message || 'something went wrong';
       console.log(bh.error);
-      bh = this.sd_306i92GFG68UKLGb(bh);
       //appendnew_next_sd_QaJCSlsMu0eEoWGE
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_QaJCSlsMu0eEoWGE');
-    }
-  }
-
-  sd_306i92GFG68UKLGb(bh) {
-    try {
-      this.__page_injector__.get(MatSnackBar).open(bh.local.response, '', {
-        duration: 3000,
-        direction: 'ltr',
-        horizontalPosition: 'start',
-        verticalPosition: 'bottom',
-      });
-      //appendnew_next_sd_306i92GFG68UKLGb
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_306i92GFG68UKLGb');
     }
   }
 

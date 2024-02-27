@@ -62,7 +62,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(page.applicants,\"appplican\")\nbh.local.dataSource = new MatTableDataSource(page.applicants);",
+        "script": "console.log(page.applicants,\"appplican\")\nbh.local.dataSource = new MatTableDataSource(page.applicants.response);",
         "functionName": "sd_eJuzOUTYKNgXaqdz_1",
         "category": "Function",
         "x": 505,

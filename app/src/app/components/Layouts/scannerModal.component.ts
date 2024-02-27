@@ -305,8 +305,8 @@ export class scannerModalComponent {
   sd_qVToKa6YbloN0msp(bh) {
     try {
       const page = this.page;
-      if (bh.input?.result?.length != 0) {
-        page.user = bh.input.result[0];
+      if (bh.input?.result?.response?.length != 0) {
+        page.user = bh.input.result?.response[0];
         if (!page.user.status) {
           page.id = page.user.id;
         }

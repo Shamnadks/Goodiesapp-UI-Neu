@@ -6,7 +6,7 @@
         "label": "applicantList",
         "disabled": false,
         "info": "",
-        "functionSeq": 0,
+        "functionSeq": 6,
         "generateNext": true,
         "serviceName": "applicantListComponent"
     },
@@ -46,7 +46,523 @@
         "x": 180,
         "y": 30,
         "wires": [
+            [
+                "sd_2aHnYEEn9UIIkYDq"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "applicantListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_n1JKjU7S0fsORa66",
+        "type": "Script",
+        "z": "sd_pHWyEy6BSRwtcqXi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(page.applicants,\"appplican\")\nbh.local.dataSource = new MatTableDataSource(page.applicants);",
+        "functionName": "sd_eJuzOUTYKNgXaqdz_1",
+        "category": "Function",
+        "x": 505,
+        "y": 100,
+        "wires": [
+            [
+                "sd_lTUO1BOMJefYAjVY"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "applicantListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_lTUO1BOMJefYAjVY",
+        "type": "PageVariables",
+        "z": "sd_pHWyEy6BSRwtcqXi",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "tableData",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "dataSource"
+                }
+            }
+        ],
+        "functionName": "sd_E9QbOlnVduPNV5MO_1",
+        "category": "Function",
+        "x": 665,
+        "y": 140,
+        "wires": [
+            [
+                "sd_2baK3I1sQxPOLJak"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "applicantListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_0rh3jvae640zDDVu",
+        "type": "AfterViewInit",
+        "z": "sd_pHWyEy6BSRwtcqXi",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "ngAfterViewInit",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 250,
+        "wires": [
+            [
+                "sd_M2RtIj5SUiRe79iq"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "applicantListComponent"
+    },
+    {
+        "id": "sd_M2RtIj5SUiRe79iq",
+        "type": "ViewPicker",
+        "z": "sd_pHWyEy6BSRwtcqXi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "childViewVariables": [
+            {
+                "key": {
+                    "type": "literal",
+                    "value": "MatSort"
+                },
+                "defaultValue": "",
+                "isViewChildren": false
+            }
+        ],
+        "functionName": "sd_xKCCTWKzvgDN0rx7_1",
+        "category": "Function",
+        "x": 205,
+        "y": 250,
+        "wires": [
+            [
+                "sd_2baK3I1sQxPOLJak"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "applicantListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_2baK3I1sQxPOLJak",
+        "type": "Script",
+        "z": "sd_pHWyEy6BSRwtcqXi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "this.page.tableData.sort = this.MatSort;",
+        "functionName": "sd_2VNGqvcKee34lvOz_1",
+        "category": "Function",
+        "x": 345,
+        "y": 250,
+        "wires": [
+            [
+                "sd_8y4nczFkE8XEHLey"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "applicantListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_a9cZsHnGsh9MXsDp",
+        "type": "Script",
+        "z": "sd_pHWyEy6BSRwtcqXi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.input.filterEvent);\nconst filterValue = (bh.input.filterEvent.target as HTMLInputElement).value;\nthis.page.tableData.filter = filterValue.trim().toLowerCase();",
+        "functionName": "sd_iBlFYTlpoczCmWts_2",
+        "category": "Function",
+        "x": 205,
+        "y": 370,
+        "wires": [
             []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "applicantListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_MH1gQinRT8EpP9fg",
+        "type": "PageStart",
+        "z": "sd_pHWyEy6BSRwtcqXi",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "onFilter_2",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "filterEvent",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "onFilter_2",
+        "category": "General",
+        "x": 60,
+        "y": 370,
+        "wires": [
+            [
+                "sd_a9cZsHnGsh9MXsDp"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "applicantListComponent"
+    },
+    {
+        "id": "sd_8y4nczFkE8XEHLey",
+        "type": "ViewPicker",
+        "z": "sd_pHWyEy6BSRwtcqXi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "childViewVariables": [
+            {
+                "key": {
+                    "type": "literal",
+                    "value": "MatPaginator"
+                },
+                "defaultValue": "",
+                "isViewChildren": false
+            }
+        ],
+        "functionName": "sd_xKCCTWKzvgDN0rx7_4",
+        "category": "Function",
+        "x": 205,
+        "y": 480,
+        "wires": [
+            [
+                "sd_mFpOy4MZWbVcri2t"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "applicantListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_mFpOy4MZWbVcri2t",
+        "type": "Script",
+        "z": "sd_pHWyEy6BSRwtcqXi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "this.page.tableData.paginator = this.MatPaginator;",
+        "functionName": "sd_2VNGqvcKee34lvOz_4",
+        "category": "Function",
+        "x": 345,
+        "y": 480,
+        "wires": [
+            [
+                "sd_X7qV8955LakD41x1"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "applicantListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_X7qV8955LakD41x1",
+        "type": "ViewPicker",
+        "z": "sd_pHWyEy6BSRwtcqXi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "childViewVariables": [
+            {
+                "key": {
+                    "type": "literal",
+                    "value": "MatPaginator"
+                },
+                "defaultValue": "",
+                "isViewChildren": false
+            }
+        ],
+        "functionName": "sd_xKCCTWKzvgDN0rx7_5",
+        "category": "Function",
+        "x": 205,
+        "y": 590,
+        "wires": [
+            [
+                "sd_ucdfBiagY2CYW9Ll"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "applicantListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ucdfBiagY2CYW9Ll",
+        "type": "Script",
+        "z": "sd_pHWyEy6BSRwtcqXi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "this.page.tableData.paginator = this.MatPaginator;",
+        "functionName": "sd_2VNGqvcKee34lvOz_5",
+        "category": "Function",
+        "x": 345,
+        "y": 590,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "applicantListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_18kthgbA8P4DffDH",
+        "type": "Script",
+        "z": "sd_pHWyEy6BSRwtcqXi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.input.filterEvent);\nconst filterValue = (bh.input.filterEvent.target as HTMLInputElement).value;\nthis.page.tableData.filter = filterValue.trim().toLowerCase();",
+        "functionName": "sd_iBlFYTlpoczCmWts_6",
+        "category": "Function",
+        "x": 705,
+        "y": 480,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "applicantListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_EgNVpDoGQeOQdnxA",
+        "type": "PageStart",
+        "z": "sd_pHWyEy6BSRwtcqXi",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "onFilter_6",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "filterEvent",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "onFilter_6",
+        "category": "General",
+        "x": 560,
+        "y": 480,
+        "wires": [
+            [
+                "sd_18kthgbA8P4DffDH"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "applicantListComponent"
+    },
+    {
+        "id": "sd_dKzhUzc2dGDKY77X",
+        "type": "PageStart",
+        "z": "sd_pHWyEy6BSRwtcqXi",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "downloadExcel",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "downloadExcel",
+        "category": "General",
+        "x": 140,
+        "y": 720,
+        "wires": [
+            [
+                "sd_bv98DAaMPC0WcHzl"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "applicantListComponent"
+    },
+    {
+        "id": "sd_bv98DAaMPC0WcHzl",
+        "type": "Script",
+        "z": "sd_pHWyEy6BSRwtcqXi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(page.tableData?._data?.value)\nbh.local.data=page.tableData?._data?.value\n\n",
+        "functionName": "sd_bv98DAaMPC0WcHzl",
+        "category": "Function",
+        "x": 305,
+        "y": 720,
+        "wires": [
+            [
+                "sd_PsOJm655sKByDL0T"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "applicantListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_PsOJm655sKByDL0T",
+        "type": "UseDependency",
+        "z": "sd_pHWyEy6BSRwtcqXi",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "XLSX",
+        "propertyType": "bh.local",
+        "propertyGv": "bh.local.XLSX",
+        "alias": "XLSX",
+        "modules": [],
+        "import_all": true,
+        "library": "xlsx",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_PsOJm655sKByDL0T",
+        "category": "Function",
+        "x": 420,
+        "y": 720,
+        "wires": [
+            [
+                "sd_hUqfflfiNmLQFesx"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "applicantListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_hUqfflfiNmLQFesx",
+        "type": "Script",
+        "z": "sd_pHWyEy6BSRwtcqXi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "function downloadAsGoogleSheetCSV() {\n  // Convert the array of objects to a CSV string\n     console.log(bh.local.dataSource)\n  const csv = convertArrayOfObjectsToCSV({\n \n    data: bh.local.data,\n    headers: ['name', 'email', 'phone_no', 'image', 'status']\n  });\n\n  // Create a download link for the CSV file\n  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });\n  const url = URL.createObjectURL(blob);\n\n  // Create a hidden link element and click it to download the file\n  const link = document.createElement('a');\n  link.href = url;\n  link.download = 'applicants.csv';\n  link.style.display = 'none';\n  document.body.appendChild(link);\n  link.click();\n  document.body.removeChild(link);\n  console.log(1111)\n}\n\nfunction convertArrayOfObjectsToCSV(args) {\n  const keys = args.headers.map(header => header.replace(/,/g, '\\\\,'));\n  const rep = args.data.map(row => keys.map(k => `\"${row[k]}\"`).join(','));\n  return `${keys.join(',')}\\r\\n${rep.join('\\r\\n')}`;\n}\ndownloadAsGoogleSheetCSV()\n",
+        "functionName": "sd_hUqfflfiNmLQFesx",
+        "category": "Function",
+        "x": 540,
+        "y": 720,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "applicantListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_TDhEgB0QkuhKg6ed",
+        "type": "PageCallService",
+        "z": "sd_pHWyEy6BSRwtcqXi",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_IQSPuXuoYNiGfMAP",
+            "type": "tab",
+            "createdDate": "2024-02-27T05:49:58.308Z",
+            "label": "getApplicants",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_PUKDCtNoH0qHHyks",
+            "flowName": "getApplicants"
+        },
+        "inputVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "response",
+                "valueType": "this.page",
+                "value": "applicants",
+                "mapVarName": "response",
+                "localVar": "this.page.applicants"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/getApplicants",
+        "startName": "getApplicants",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_TDhEgB0QkuhKg6ed",
+        "category": "General",
+        "x": 385,
+        "y": 80,
+        "wires": [
+            [
+                "sd_n1JKjU7S0fsORa66"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "applicantListComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_2aHnYEEn9UIIkYDq",
+        "type": "Script",
+        "z": "sd_pHWyEy6BSRwtcqXi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.system)",
+        "functionName": "sd_2aHnYEEn9UIIkYDq",
+        "category": "Function",
+        "x": 285,
+        "y": 100,
+        "wires": [
+            [
+                "sd_TDhEgB0QkuhKg6ed"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,

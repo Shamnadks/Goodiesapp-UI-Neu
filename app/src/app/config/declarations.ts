@@ -16,6 +16,8 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-getApplicants
+import { getApplicants } from '../sd-services/getApplicants';
 //CORE_REFERENCE_IMPORT-scannerModalComponent
 import { scannerModalComponent } from '../components/Layouts/scannerModal.component';
 //CORE_REFERENCE_IMPORT-applicantListComponent
@@ -77,6 +79,8 @@ export const appProviders = [
   },
   NAuthGuardService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY
+//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-getApplicants
+getApplicants,
 ];
 
 /**

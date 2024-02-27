@@ -100,33 +100,6 @@ export class registerUser {
     }
   }
 
-  async sd_tq2aHN8ifKRTcD34(bh) {
-    try {
-      bh.local.response = bh.error.message || 'something went wrong';
-      console.log(bh.error);
-      bh = await this.sd_rGGl8k7r5MEVSZMK(bh);
-      //appendnew_next_sd_tq2aHN8ifKRTcD34
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_tq2aHN8ifKRTcD34');
-    }
-  }
-
-  async sd_rGGl8k7r5MEVSZMK(bh) {
-    try {
-      this.matSnackBar.open(bh.local.response, bh.local, {
-        duration: 3000,
-        direction: 'ltr',
-        horizontalPosition: 'start',
-        verticalPosition: 'bottom',
-      });
-      //appendnew_next_sd_rGGl8k7r5MEVSZMK
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_rGGl8k7r5MEVSZMK');
-    }
-  }
-
   //appendnew_node
 
   // error_handler_slot
@@ -134,24 +107,7 @@ export class registerUser {
     console.error(e);
     bh.error = e;
     bh.errorSource = src;
-    if (
-      false ||
-      (await this.sd_DtBDR51TStUloiS4(bh))
-      /*appendnew_next_Catch*/
-    ) {
-      return bh;
-    } else {
-      throw e;
-    }
-  }
-  async sd_DtBDR51TStUloiS4(bh) {
-    const catchConnectedNodes = ['sd_tq2aHN8ifKRTcD34', 'sd_rGGl8k7r5MEVSZMK'];
-    if (catchConnectedNodes.includes(bh.errorSource)) {
-      return false;
-    }
-    bh = await this.sd_tq2aHN8ifKRTcD34(bh);
-    //appendnew_next_sd_DtBDR51TStUloiS4
-    return true;
+    throw e;
   }
   //appendnew_flow_registerUser_Catch
 }

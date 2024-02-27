@@ -14,7 +14,7 @@
       <mat-form-field style="width : 50%;min-width: 250px;" [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
         <input matInput type="number" placeholder="Enter the phone number" [required]="false" formControlName="phone">
         <mat-error align="start" *ngIf="page.form.get(&apos;phone&apos;)?.errors?.required">Please enter the phone number</mat-error><mat-error align="start" *ngIf="page.form.get(&apos;phone&apos;)?.errors?.pattern">enter the valid phone number</mat-error>
-      </mat-form-field><button mat-button style="width : 50%; min-width: 250px; background-color:blue; color:white;" type="add user">Button</button>
+      </mat-form-field><button mat-button style="width : 50%; min-width: 250px; background-color:blue; color:white;" type="add user">Register</button>
     </div>
   </form>
 </div>

@@ -43,9 +43,11 @@
         "neutrinos-module": "0.0.70-beta.3",
         "neutrinos-oauth-client": "1.2.5-beta.1",
         "ng2-charts": "3.0.11",
+        "ngx-scanner-qrcode": "1.6.6",
         "rxjs": "7.5.5",
         "signature_pad": "4.0.7",
         "tslib": "2.4.0",
+        "xlsx": "0.18.5",
         "zone.js": "0.11.4"
     },
     "devDependencies": {

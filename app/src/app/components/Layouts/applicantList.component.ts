@@ -180,7 +180,7 @@ export class applicantListComponent implements AfterViewInit {
     try {
       const page = this.page;
       console.log(page.applicants, 'appplican');
-      bh.local.dataSource = new MatTableDataSource(page.applicants);
+      bh.local.dataSource = new MatTableDataSource(page.applicants.response);
       bh = this.sd_E9QbOlnVduPNV5MO_1(bh);
       //appendnew_next_sd_eJuzOUTYKNgXaqdz_1
       return bh;

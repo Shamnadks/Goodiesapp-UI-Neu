@@ -191,7 +191,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "submitFormScript",
-        "script": "if(!page.form.valid){\n    return\n}\nbh.local.userData={\n    ...page.form.value\n}",
+        "script": "console.log(page.form)\nif(!page.form.valid){\n    return\n}\nbh.local.userData={\n    ...page.form.value\n}\npage.form.reset()",
         "functionName": "submitFormScript",
         "category": "Function",
         "x": 200,
@@ -257,10 +257,12 @@
         "accept_csd": true,
         "functionName": "submitFormCallService",
         "category": "General",
-        "x": 320,
+        "x": 345,
         "y": 260,
         "wires": [
-            []
+            [
+                "sd_OJZ46XXwr2yeE15t"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -308,9 +310,7 @@
         "x": 200,
         "y": 380,
         "wires": [
-            [
-                "sd_306i92GFG68UKLGb"
-            ]
+            []
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -318,15 +318,15 @@
         "generated": true
     },
     {
-        "id": "sd_306i92GFG68UKLGb",
+        "id": "sd_OJZ46XXwr2yeE15t",
         "type": "SnackBar",
         "z": "sd_ps6SvG6XTw5SLCjc",
         "viewType": "client-pages",
         "nodeType": "flow",
         "name": "",
         "message": {
-            "type": "bh.local",
-            "value": "response"
+            "type": "str",
+            "value": "User Added successfully"
         },
         "action": {
             "type": "str",
@@ -336,19 +336,17 @@
             "type": "num",
             "value": "3000"
         },
-        "horizontalPosition": "start",
-        "horizontalPositionMap": "",
+        "horizontalPosition": "center",
         "verticalPosition": "bottom",
-        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
         },
         "direction": "ltr",
-        "functionName": "sd_306i92GFG68UKLGb",
+        "functionName": "sd_OJZ46XXwr2yeE15t",
         "category": "General",
-        "x": 325,
-        "y": 380,
+        "x": 480,
+        "y": 280,
         "wires": [
             []
         ],
